@@ -4,65 +4,42 @@ const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
     var params = req.query;
-    console.log(params.d);
-
-    switch(params.q) {
-        case 'Ping' :
-            res.send('OK');
-            break;
-        case 'Name' :
-            console.log('Neer Pandya');
-            res.send('Neer Pandya');
-            break;
-        case 'Email Address' :
-            console.log('neerpandya@gmail.com');
-            res.send('neerpandya@gmail.com');
-            break;
-        case 'Phone' :
-            console.log('516-510-1480');
-            res.send('516-510-1480');
-            break;
-        case 'Position' :
-            console.log('Software Engineer');
-            res.send('Software Engineer');
-            break;
-        case 'Years' :
-            console.log('4+ Years');
-            res.send('4+ Years');
-            break;
-        case 'Referrer' :
-            console.log('Through a recruiter');
-            res.send('Through a recruiter');
-            break;
-        case 'Degree' :
-            console.log('Masters in CS');
-            res.send('Master of Computer Science');
-            break;
-        case 'Resume' :
-            console.log('link to resume');
-            res.send('link');
-            break;
-        case 'Source' :
-            console.log('Link to github');
-            res.send('Link to github');
-            break;
-        case 'Status' :
-            console.log('Sure thing');
-            res.send('Sure thing');
-            break;
-        case 'Puzzle' :
-            res.send(' ' +
-                'ABCD\n' +
-                'A=<>>\n' +
-                'B>=>>\n' +
-                'C<<=>\n' +
-                'D<<<=');
-            break;
-        default:
-            console.log('Unknow parameter');
-            console.log(params.q);
-            res.send('OKNOTOK');
-    }
+    var response = function () {
+        switch(params.q) {
+            case 'Ping' :
+                return 'OK';
+            case 'Name' :
+                return 'Neer Pandya';
+            case 'Email Address' :
+                return 'neerpandya@gmail.com';
+            case 'Phone' :
+                return '516-510-1480';
+            case 'Position' :
+                return 'Software Engineer';
+            case 'Years' :
+                return '4+ Years';
+            case 'Referrer' :
+                return 'Through a recruiter';
+            case 'Degree' :
+                return 'Master of Computer Science';
+            case 'Resume' :
+                return 'link';
+            case 'Source' :
+                return 'https://github.com/neerpandya/neer-emx-takehome';
+            case 'Status' :
+                return 'Sure thing';
+            case 'Puzzle' :
+                return ' ' +
+                    'ABCD\n' +
+                    'A=<>>\n' +
+                    'B>=>>\n' +
+                    'C<<=>\n' +
+                    'D<<<=';
+            default:
+                return'OKNOTOK';
+        }
+    };
+    res.send(response)
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
