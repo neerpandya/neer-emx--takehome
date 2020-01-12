@@ -4,7 +4,7 @@ const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
     var params = req.query;
-    var response = function () {
+    var answer = function () {
         switch(params.q) {
             case 'Ping' :
                 return 'OK';
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
                 return'OKNOTOK';
         }
     };
-    res.send(response)
+    res.send(answer())
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
