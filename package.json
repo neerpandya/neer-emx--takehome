@@ -1,0 +1,35 @@
+{
+  "name": "neer_emx_takehome",
+  "version": "1.0.0",
+  "description": "A Node.js app",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "resume.js",
+  "scripts": {
+    "start": "node resume.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neerpandya/neer-emx-takehome.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/neerpandya/neer-emx-takehome/issues"
+  },
+  "homepage": "https://github.com/neerpandya/neer-emx-takehome#readme"
+}
