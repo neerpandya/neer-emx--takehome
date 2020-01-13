@@ -39,8 +39,11 @@ app.get('/resume', (req, res) => {
 });
 
 function solvePuzzle(puzzle) {
+    console.log("first: " + puzzle);
     var puzzle = puzzle.split('Please solve this puzzle: ABCD ')[1];
+    console.log("second: " + puzzle);
     var puzzleArray = puzzle.split(' ');
+    console.log("third: " + puzzle);
 
     puzzleArray.forEach(function (currentValue, currentIndex, currentString) {
         console.log(currentValue);
