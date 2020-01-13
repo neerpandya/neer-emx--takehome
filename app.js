@@ -4,6 +4,7 @@ const port = process.env.PORT || 5000;
 
 app.get('/resume', (req, res) => {
     var params = req.query;
+    console.log(params);
     var answer = function () {
         switch(params.q) {
             case 'Ping' :
