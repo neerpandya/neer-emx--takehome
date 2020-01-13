@@ -39,6 +39,7 @@ app.get('/resume', (req, res) => {
 });
 
 function solvePuzzle(puzzle) {
+    puzzle = puzzle.replace(/\n/g, " ");
     console.log("first: " + puzzle);
     puzzle = puzzle.split('Please solve this puzzle: ABCD ')[1];
     console.log("second: " + puzzle);
