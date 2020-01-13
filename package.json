@@ -5,9 +5,9 @@
   "engines": {
     "node": "12.x"
   },
-  "main": "resume.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node resume.js",
+    "start": "node app.js",
     "test": "node test.js"
   },
   "dependencies": {
