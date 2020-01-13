@@ -39,13 +39,10 @@ app.get('/resume', (req, res) => {
 });
 
 function solvePuzzle(puzzle) {
-    puzzle = puzzle.replace(/\n/g, " ");
-    console.log("first: " + puzzle);
-    puzzle = puzzle.split('Please solve this puzzle:  ABCD ')[1];
-    console.log("second: " + puzzle);
+    puzzle = puzzle.replace(/\n/g, " ").split('Please solve this puzzle:  ABCD ')[1];
     var puzzleArray = puzzle.split(' ');
-    console.log("third: " + puzzle);
 
+    // Initializing board with known values
     puzzleArray.forEach(function (currentValue, currentIndex, currentString) {
         console.log(currentValue);
         for(var i = 1; i < currentValue.length; i++){
@@ -64,9 +61,9 @@ function solvePuzzle(puzzle) {
         }
     });
 
+    // Solving rest of board
     puzzleArray.forEach(function (currentValue, currentIndex, currentString) {
         if(currentValue.split('<').length === 1){
-            console.log("<<<" + currentValue);
             for(var i = 1; i < currentValue.length; i++){
                 if(currentValue[i] === '-'){
                     currentValue = setCharAt(currentValue, i, '>');
@@ -75,7 +72,6 @@ function solvePuzzle(puzzle) {
                 }
             }
         } else if(currentValue.split('>').length === 1){
-            console.log(">>>" + currentValue);
             for(var i = 1; i < currentValue.length; i++){
                 if(currentValue[i] === '-'){
                     currentValue = setCharAt(currentValue, i, '<');
@@ -85,9 +81,6 @@ function solvePuzzle(puzzle) {
             }
         }
     });
-
-
-    console.log(puzzleArray);
 
     var answer = ' ABCD\n' +
         puzzleArray[0] + '\n' +
