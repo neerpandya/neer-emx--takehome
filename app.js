@@ -6,7 +6,7 @@ const resumeService = require('./resume-service.js');
 app.get('/resume', (req, res) => {
     var params = req.query;
     var answer = resumeService.getResumeAnswer(params);
-    res.send(answer())
+    res.send(answer)
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
